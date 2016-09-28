@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	$("#in").click(function(){
+	
+	$(".here").hide(1000);
+	});
+	
+	$("#out").click(function(){
+	
+	$(".here").show(1000);  	
+	
+	});
+	
+});
+
+</script>
+</head>
+<body>
+
+<input type="button" id="out" value="show me">
+<input type="button" id="in" value="get out">
+
+<div class="here">
+	<ul>
+		<li><a href="#">www.naver.com</a></li>
+		<li><a href="#">www.empas.com</a></li>
+		<li><a href="#">www.google.com</a></li>
+		<li><a href="#">www.daum.net</a></li>
+		<li><a href="#">www.yahoo.co.kr</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

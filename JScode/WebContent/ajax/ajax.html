@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	$("#val").click(function(){
+		
+	$.ajax({
+		
+		type: "post",
+		url: "ajax_call.html",
+		success : function test(a){ $("#callback").html(a); },
+		error : function error(){alert("error");}
+	
+		});
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<input type="button" id="val" value="here">
+<div id="callback"></div>
+
+</body>
+</html>

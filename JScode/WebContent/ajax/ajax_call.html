@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+function Request(){
+
+	var requestParam ="";
+	
+	this.getParameter = function(param){
+		
+		var url=unescape(location.href);
+		
+		var paramArr=(url.substring(url.indexOf("?")+1,url.length)).split("&");
+	
+		for(var i = 0; i < paramArr.length ; i++){
+			
+			var temp = paramArr[i].split("=");
+			
+			if(temp[0].toUpperCase() == param.toUpperCase()){
+				
+				requestParam = paramArr[i].split("=")[1];
+				break;
+			}
+		}
+		return requestParam;
+	}
+	
+}
+
+
+var request = new Request();
+
+var x = request.getParameter("id");
+
+document.getElementById("demo").innerHTML = x;
+
+</script>
+</head>
+<body>
+Ajax가 도착하셨습니다.
+</body>
+</html>
