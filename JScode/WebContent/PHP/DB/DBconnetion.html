@@ -1,0 +1,32 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<title>test</title>
+</head>
+<body>
+
+<?php
+ $conn =  mysqli_connect("localhost","root","Tjdwls9!02","hardware");
+ 
+ if(mysqli_connect_errno())
+ {
+ 
+ echo "MYSQL 연결 실패".mysqli_connect_errno();
+ 
+ }
+ $result = mysqli_query($conn,"select * from test");
+ 
+ while($data = mysqli_fetch_array($result))
+ {
+ 
+ echo $data['content'];
+ 
+ }
+ 
+ mysqli_close($conn);
+
+?>
+
+</body>
+</html>
+
