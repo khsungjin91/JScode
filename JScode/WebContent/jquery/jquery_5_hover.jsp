@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <style>
 ul, li, a{text-decoration:none; list-style: none; display:block;}
-
 .top_menu ul{width: 1000px; height:30px;}
 #bt_01, #bt_02, #bt_03, #bt_04 {float: left; margin: 20px 20px 0 0;}
 .sm_01, .sm_02, .sm_03, .sm_04 {display:none; position:absolute; margin:0 0 0 -40px;}
