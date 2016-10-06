@@ -19,7 +19,7 @@ function setCookie( name, value, expirehours ) {  // 하루동안 보이지 않기 기본 d
 }
 
 function closeWin() {
-	document.all['pop_03'].style.visibility = "hidden";  // 현재 문서에 모든pop_03에 스타일에 visibility 에 hidden 을 넣어라
+	document.getElementById('pop_03').style.visibility = "hidden";  // 현재 문서에 모든pop_03에 스타일에 visibility 에 hidden 을 넣어라
 				/* jquery 식으로 해볼까... 
 				 $("id").click(fucntion(){
 					
@@ -33,7 +33,7 @@ function closeWin() {
 
 function todaycloseWin() { // 이 구역이 하루동안 열지 않음을 클릭했을때 실행되는 부분
 	setCookie( "ncookie","done",24);
-	document.all['pop_03'].style.visibility = "hidden"; // 이 부분은 closeWin()이랑 같은데 윗부분이 해석이 안된다. 
+	document.getElementById('pop_03').style.visibility = "hidden"; // 이 부분은 closeWin()이랑 같은데 윗부분이 해석이 안된다. 
 
 	/* ---setCookie(ncookie , done, 24){
 		var todayDate = new Date();
@@ -45,22 +45,20 @@ function todaycloseWin() { // 이 구역이 하루동안 열지 않음을 클릭했을때 실행되는
 }
 
 
-
-
 </script>
 
-<div id="pop_03" style="position:absolute; z-index:9999; width:532px; top:200px; right:200px; visibility:done;">
-	<div style="overflow:hidden">
-	<img src="/pop_up/images/pop_0918.png" usemap="#Map_close"width="532" border="0" alt="" />
-        <map name="Map_close" id="Map_close">
-			<area shape="rect" coords="339,211,384,234"  href="javascript:closeWin();" />
-        </map>
-  </div>
+<div id="pop_03" style="position:absolute; z-index:9999; visibility:done;">
+	<div>
+	<img src="../css/img/popup/psj_pop_up.gif"  width="350" border="0" alt="" />
+	<a href="#" onclick="todaycloseWin()">오늘하루동안 열지않기</a>
+	<a href="#" onclick="closeWin()">닫기</a>
+  	</div>
 </div>
 
 
 <script language="Javascript"> 
 cookiedata = document.cookie;  // cookie 에 저장된 값을 가져온다.
+alert(cookiedata);
 if ( cookiedata.indexOf("ncookie=done") < 0 ){  // cookie에 저장된 값이 0보다 작으면 다시 pop-up 실행한다.     
     document.all['pop_03'].style.visibility = "visible"; 
 }else{ 
