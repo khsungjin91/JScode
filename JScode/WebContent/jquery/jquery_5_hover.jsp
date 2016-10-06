@@ -15,7 +15,7 @@ ul, li, a{text-decoration:none; list-style: none; display:block;}
 
 </style>
 <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="../js/jqeury_5_script.js"></script>
+<script src="../js/jquery_5_script.js"></script>
 </head>
 <body>
 
