@@ -1,0 +1,61 @@
+
+swiper 는  웹을 모바일 사이즈로 만들어주는 script 기능
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+
+<script>
+ function fnMove(seq){
+        var offset = $("#simg_0" + seq).offset();
+        $('html, body').animate({scrollTop : offset.top},10);
+    }
+	
+	$(document).ready(function(){
+		$('.subs-bt li img',$(this)).click(function(){
+				for(var i = 1; i <= 8; i++){
+					var num = 'bt_0'+i;
+					if(num == this.id){
+						$('#'+num).attr('src','images/sub_'+num+'_on.png');
+					}else{
+						$('#'+num).attr('src','images/sub_'+num+'_off.png');
+					}
+					
+				}
+		});
+	});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+	
+	$('.dinfo-01').addClass('d_show');
+
+	$(".subd-bt li img",$(this)).click(function(){
+
+		if(this.id == 'bt_01'){
+				$('#bt_01').attr('src','images/doc_bt_01_on.png');
+				$('#bt_02').attr('src','images/doc_bt_02_off.png');
+				$('.dinfo-02').removeClass('d_show');
+				$('.dinfo-01').addClass('d_show');	
+		}else if(this.id == 'bt_02'){
+				$('#bt_01').attr('src','images/doc_bt_01_off.png');
+				$('#bt_02').attr('src','images/doc_bt_02_on.png');
+				$('.dinfo-01').removeClass('d_show');	
+				$('.dinfo-02').addClass('d_show');		
+		}
+		
+	});
+	
+	
+});
+</script>
+
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+	pagination: '.swiper-pagination',
+	paginationClickable: true,
+	autoplay: 3000,
+	autoplayDisableOnInteraction: false
+});
+</script>
