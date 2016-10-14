@@ -11,7 +11,6 @@ ul, li, a{text-decoration:none; list-style: none; display:block;}
 #bt_01, #bt_02, #bt_03, #bt_04 {float: left; margin: 20px 20px 0 0;}
 .sm_01, .sm_02, .sm_03, .sm_04 {display:none; position:absolute; margin:0 0 0 -40px;}
 .show {display:block}
-
 </style>
 <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="../js/jquery_5_script.js"></script>
