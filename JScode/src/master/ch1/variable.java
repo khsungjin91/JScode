@@ -1,8 +1,8 @@
-package java.ch1;
+package master.ch1;
 
 public class variable {
 
-		public static void main(String[] args) {
+		public static void main(String[]args) {
 		
 			int num = 10;
 			
