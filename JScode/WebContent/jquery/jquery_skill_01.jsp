@@ -14,18 +14,16 @@ $(document).ready(function(){
 	
 	$("#stop_timer").click(function(){
 	
-			$('.green').animate({
+	$('.green').animate({
+		height : ['toggle']
 				
-				height : ['toggle','swing']
-				
-			},{
-				  duration: 1000,
-				  specialEasing: {
-				  width: 'linear',
-				  height: 'easeOutBounce'
-				  }
-				});
-		
+	},{
+		  duration: 100,
+		  specialEasing: {
+		  width: 'linear',
+		  height: 'easeOutBounce'
+		  }
+		});
 	});
 });
 </script>
@@ -35,10 +33,9 @@ window.onload=function() {
 	var ctx = document.getElementById('myCanvas').getContext("2d");
 	
 	ctx.beginPath();
-	ctx.arc(100,100,50,0,(Math.PI/180)*270, false);
+	ctx.arc(200,200,300,0,(Math.PI/180)*360, false);
 	ctx.stroke();
-     
-
+    
 }
 </script>
 </head>
@@ -49,6 +46,6 @@ window.onload=function() {
 <div>
 <button id="stop_timer">push</button>
 </div>
-    <canvas id="myCanvas" height="480" width="640">
+  <!--   <canvas id="myCanvas" height="600" width="600">  -->
 </body>
 </html>
