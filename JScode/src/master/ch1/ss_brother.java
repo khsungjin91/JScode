@@ -11,7 +11,14 @@ public class ss_brother {
 		String x_s []  = x.split("-");
 		
 		System.out.println(x_s[0]);
-
+		
+		int num = 2;
+		int result = 1;
+		
+	double num2 = Math.sqrt(4);
+		
+		System.out.println(num2);
+		
 	}
 	
 	

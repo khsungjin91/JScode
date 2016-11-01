@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>coding game 1</title>
+<style>
+	#buttons {}
+	#buttons div {width:20px; height:20px; font-family:Arial;font-size:15px;background:#000;color:#fff;line-height:20px;text-align:center;display:inline-block;}
+	#buttons div:hover {background:#00f;color:#ff0;cursor:pointer;}
+	#box {width:500px;height:500px;border:1px solid #000;position:relative;background:url(http://webskills.kr/images/grid.png);}
+	#post, #ball {width:50px;height:50px;position:absolute;}
+	#post { background:url(http://webskills.kr/images/post.jpg);}
+	#ball { background:url(http://webskills.kr/images/ball.jpg);}
+</style>
+</head>
+<body>
+	<div id="buttons">
+		<div onclick="goLeft();">←</div>
+		<div onclick="goRight();">→</div>
+		<div onclick="goUp();">↑</div>
+		<div onclick="goDown();">↓</div>
+		<div onclick="goAuto();" title="자동으로">A</div>
+		<div onclick="checkGoal();" title="골체크">C</div>
+		<div onclick="goRefresh();" title="새로시작">R</div>
+	</div>
+	<div id="box">
+		<div id="post"></div>
+		<div id="ball"></div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		var bx = 0;
+		var by = 0;
+		var px = 0;
+		var py = 0;
+		function goLeft(){
+			bx = bx - 50;
+			if(bx < 0) bx = 0;
+			$("#ball").animate({left:bx,top:by});
+			checkGoal();
+		}
+		function goRight(){
+			bx = bx + 50;
+			if(bx > 450) bx = 450;
+			$("#ball").animate({left:bx,top:by});
+			checkGoal();
+		}
+		function goUp(){
+			by = by - 50;
+			if(by < 0) by = 0;
+			$("#ball").animate({left:bx,top:by});
+			checkGoal();
+		}
+		function goDown(){
+			by = by + 50;
+			if(by > 450) by = 450;
+			$("#ball").animate({left:bx,top:by});
+			checkGoal();
+		}
+		function goRefresh(){
+			bx = (Math.floor((Math.random() * 9) + 1)) * 50;
+			by = (Math.floor((Math.random() * 9) + 1)) * 50;
+			px = (Math.floor((Math.random() * 9) + 1)) * 50;
+			py = (Math.floor((Math.random() * 9) + 1)) * 50;
+			$("#ball").css({left:bx,top:by});
+			$("#post").css({left:px,top:py});
+		}
+		function checkGoal(){
+			if( bx == px && by == py ) {
+				alert("Goooooooooal!!!"); 
+			}
+		}
+		function goAuto_old(){
+			goRefresh();
+			for(var i=1;i<=4;i++){
+				goRight();
+				goDown();
+			}
+		}
+		function goAuto(){
+			var goal = false;
+			while(goal == false){
+				if(bx < px) {
+					bx = bx + 50;
+					$("#ball").animate({left:bx,top:by});
+				}
+				if(bx > px) {
+					bx = bx - 50;
+					$("#ball").animate({left:bx,top:by});
+				}
+				if(by < py) {
+					by = by + 50;
+					$("#ball").animate({left:bx,top:by});
+				}
+				if(by > py) {
+					by = by - 50;
+					$("#ball").animate({left:bx,top:by});
+				}
+				if(bx == px && by == py) {
+					goal = true;
+				}
+			}
+		}
+		goRefresh();
+	</script>
+</body>
+</html>
